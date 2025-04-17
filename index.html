@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>My Portfolio for CS200</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style>
+      html {
+        background-color: #fbe7a1;
+      }
+      body > *,
+      main > * {
+        outline: 1px #b8e3c9 solid;
+      }
+      * {
+        /*margin: 10px;*/
+        padding: 10px;
+      }
+      * {
+        box-sizing: border-box;
+      }
+
+      nav {
+        background-color: #b8e3c9;
+      }
+      header,
+      footer {
+        text-align: center;
+        background: #d8b4e2;
+        color: white;
+      }
+      header ul {
+        display: flex;
+        justify-content: center; /* Centers horizontally */
+        align-items: center; /* Centers vertically */
+        flex-wrap: wrap; /* Adjusts for small screens */
+        list-style-type: none; /* Removes bullets */
+        margin: 0;
+        padding: 0;
+      }
+
+      header li {
+        margin: 0;
+        text-align: center; /* Centers text within each item */
+      }
+      body,
+      nav,
+      main,
+      article {
+        display: flex;
+      }
+      body,
+      article {
+        flex-direction: column;
+        background-color: white;
+        margin: 5px;
+      }
+      main {
+        display: flex;
+        flex-wrap: wrap;
+        padding: 0; /* Optional: reset padding */
+        margin: 0; /* Optional: reset margin */
+        background-color: #b8e3c9;
+      }
+
+      article {
+        flex: 1 1 calc(33.33% - 10px); /* Subtract the combined margins */
+        margin: 5px;
+        box-sizing: border-box; /* Ensures padding/margin are included in size */
+      }
+
+      img {
+        width: 100%;
+        background-color: #ccc;
+        padding: 0;
+      }
+
+      p {
+        flex: 1 0 auto;
+      }
+      nav {
+        display: flex;
+        padding: 5px 2px;
+      }
+      nav a {
+        flex: 1 0;
+        margin: 0 5px;
+        background-color: white;
+        color: blueviolet;
+        text-align: center;
+        text-decoration: none;
+        border: 1px solid blueviolet;
+        border-radius: 5px;
+      }
+      header img {
+        width: 150px;
+        height: 100px;
+        background-color: #d8b4e2;
+      }
+      article img {
+        border: 2px solid #d8b4e2;
+        border-radius: 5px;
+      }
+      article a:hover img {
+        box-shadow: 6px 6px 6px rgba(0, 0, 0, 0.3);
+        transition: transform 0.3s linear;
+      }
+      article p {
+        font-family: 'Arial', sans-serif;
+        font-size: 1.2;
+      }
+      ul {
+        display: flex;
+        align-items: center;
+        background-color: #d8b4e2;
+        list-style: none;
+        padding: 0.5em;
+        margin: 0;
+      }
+      li {
+        font-family: sans-serif;
+        font-size: 1em;
+      }
+      nav a:link,
+      nav a:visited {
+        color: #d8b4e2;
+      }
+      nav a:focus,
+      nav a:hover,
+      nav a:active {
+        color: #fff;
+        border: 1px solid #fff;
+        background-color: #d8b4e2;
+      }
+      footer {
+        background-color: #d8b4e2;
+        color: white;
+        text-align: center;
+      }
+      footer img {
+        width: 50px;
+        height: 50px;
+        margin: 0 0.5em;
+        background-color: #d8b4e2;
+      }
+      h1,
+      h3 {
+        text-align: left;
+        font-family: 'Arial', sans-serif;
+      }
+      h1:first-letter {
+        color: #fbe7a1;
+        padding: 0 0.3rem;
+        margin: 0 0.3rem 0 0;
+        border: 2px solid;
+        border-radius: 8px;
+        font-family: 'Arial', sans-serif;
+
+        font-size: 4rem;
+        line-height: 1;
+      }
+      .center-content img {
+        margin-top: 0; /* Reduces space above */
+        margin-bottom: 0; /* Reduces space below */
+      }
+
+      .center-content h2 {
+        margin: 0 0; /* Tightens spacing around the name */
+        font-size: 1em; /* Keeps the name visually distinct */
+        font-weight: bold;
+        text-align: center;
+      }
+
+      .center-content h1,
+      .center-content h3 {
+        margin-top: 0; /* Controls spacing above each heading */
+        margin-bottom: 0; /* Controls spacing below each heading */
+      }
+
+      .center-content {
+        padding: 0; /* Eliminates unnecessary padding around elements */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+      @media (max-width: 768px) {
+        main {
+          flex-direction: column; /* Change main container to a vertical layout */
+        }
+        nav {
+          flex-direction: column;
+          align-items: center; /* Center the navigation items vertically */
+        }
+        nav a {
+          width: 50%;
+          margin: 5px;
+        }
+        article {
+          flex: 1 1 100%; /* Each article takes up the full width of its row */
+          margin: 5px auto; /* Center articles vertically */
+        }
+      }
+      @media (max-width: 600px) {
+        header ul {
+          flex-direction: column; /* Stacks items vertically */
+        }
+
+        header h1,
+        header h3 {
+          text-align: center; /* Centers text for small screens */
+          font-size: 1.5em; /* Adjusts font size */
+        }
+
+        header img {
+          max-width: 80%; /* Scales image */
+          height: auto; /* Maintains aspect ratio */
+        }
+        header {
+          padding: 0 0;
+        }
+      }
+      .center-content {
+        display: flex;
+        flex-direction: column; /* Stacks items vertically */
+        align-items: center; /* Centers items horizontally */
+        text-align: center; /* Centers text under the image */
+      }
+
+      .center-content img {
+        max-width: 100%; /* Ensures image scales on smaller screens */
+        height: auto; /* Maintains aspect ratio */
+        margin-bottom: 0; /* Adds space below the image */
+        margin-top: 0;
+      }
+
+      .center-content h1,
+      .center-content h3 {
+        margin-top: 0; /* Adds space above the text */
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <div class="center-content">
+        <img src="images/roberto.svg" alt="Roberto Aguado-Froylan" />
+        <h2>Roberto Aguado-Froylan</h2>
+        <h1>Welcome to my portfolio page!</h1>
+        <h3>
+          Below I have posted images of several of my web pages which illustrate
+          my work.
+        </h3>
+        <h3>Click on an image to see the actual web page.</h3>
+      </div>
+    </header>
+    <nav>
+      <a href="#">Home</a>
+      <a href="#">About</a>
+      <a href="#">Blog</a>
+      <a href="#">Career</a>
+      <a href="#">Contact Me</a>
+    </nav>
+    <main>
+      <article>
+        <a href="bistro/ex4-5_index.html">
+          <img src="images/black_goose_bistro.png" alt="bistro"
+        /></a>
+        <p>Describe the project here.</p>
+      </article>
+      <article>
+        <img src="images/bistro_news.png" alt="bistro news" />
+        <p>Describe the project here.</p>
+      </article>
+      <article>
+        <img src="images/jens_kitchen.png" alt="jens kitchen" />
+        <p>Describe the project here.</p>
+      </article>
+
+      <article>
+        <img alt="" src="images/blackGooseGallery.png" />
+        <p>Describe the project here.</p>
+      </article>
+      <article>
+        <img alt="" src="images/cookingWithDaniel.png" />
+        <p>Describe the project here.</p>
+      </article>
+      <article>
+        <img alt="" src="images/chapter24-2.png" />
+        <p>Describe the project here.</p>
+      </article>
+      <article>
+        <img alt="" src="images/under-construction-animated-gif-8.gif" />
+        <p>Describe the project here.</p>
+      </article>
+      <article>
+        <img alt="" src="images/under-construction-animated-gif-8.gif" />
+        <p>Describe the project here.</p>
+      </article>
+    </main>
+    <footer>
+      <p>Please visit my social media pages</p>
+      <p>
+        <img src="icons/twitter.svg" alt="twitter" />
+        <img src="icons/facebook.svg" alt="facebook" />
+        <img src="icons/instagram.svg" alt="instagram" />
+      </p>
+    </footer>
+  </body>
+</html>
